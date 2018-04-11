@@ -33,7 +33,7 @@ setup(
                  'wordcookies2_solver'},
     entry_points={
         'console_scripts': [
-            'wordcookies2_solver=wordcookies2_solver.cli:main'
+            'wc2s=wordcookies2_solver.cli:main'
         ]
     },
     include_package_data=True,
