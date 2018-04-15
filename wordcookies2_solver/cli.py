@@ -1,15 +1,23 @@
 # -*- coding: utf-8 -*-
 
 import click
+from wordcookies2_solver.wordcookies2_solver import wordlist
 
 
 @click.command()
-def main(args=None):
+@click.argument('letters')
+@click.option('--length', default=None, type=int)
+def main(letters, length=None):
     """Console script for wordcookies2_solver"""
-    click.echo("Replace this message by putting your code into "
-               "wordcookies2_solver.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
+    l = wordlist(letters, length=length)
+    for w in l:
+        click.echo(w)
 
+@click.command()
+def words(letters, length=None):
+    l = wordlist(letters, length=length)
+    for w in l:
+        click.echo(w)
 
 if __name__ == "__main__":
-    main()
+    main(letters, length=None)
