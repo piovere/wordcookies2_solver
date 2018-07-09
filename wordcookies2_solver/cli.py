@@ -6,9 +6,9 @@ from wordcookies2_solver.wordcookies2_solver import wordlist
 
 @click.command()
 @click.argument('letters')
-@click.option('--length', default=None, type=int)
+@click.option('--length', default=None, type=int, help="Length of words")
 def main(letters, length=None):
-    """Console script for wordcookies2_solver"""
+    """Return all words that can be made with LETTERS"""
     l = wordlist(letters, length=length)
     for w in l:
         click.echo(w)
